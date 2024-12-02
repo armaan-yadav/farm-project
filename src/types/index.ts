@@ -1,4 +1,6 @@
-export interface User {
+import { Models } from "appwrite";
+export interface UserData {
+  accountId: string;
   name: string;
   age: number;
   profileUrl: string;
@@ -9,3 +11,5 @@ export interface User {
   village: string | null;
   pinCode: string;
 }
+
+export interface User extends UserData, Models.Document {}

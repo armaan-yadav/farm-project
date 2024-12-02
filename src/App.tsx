@@ -9,6 +9,9 @@ import SignUpPage from "./_auth/pages/SignUpPage";
 import RootLayout from "./_root/RootLayout";
 import HomePage from "./_root/pages/HomePage";
 import CreateProfile from "./_root/pages/CreateProfile";
+import AboutPage from "./_root/pages/AboutPage";
+import ContactUs from "./_root/pages/ContactUs";
+import OurServies from "./_root/pages/OurServies";
 
 function App() {
   useEffect(() => {
@@ -33,6 +36,9 @@ function App() {
         {/* OTHER ROUTES  */}
         <Route element={<RootLayout />}>
           <Route path="/" index element={<HomePage />} />
+          <Route path="/about" index element={<AboutPage />} />
+          <Route path="/contact-us" index element={<ContactUs />} />
+          <Route path="/our-services" index element={<OurServies />} />
         </Route>
       </Routes>
       <Toaster />

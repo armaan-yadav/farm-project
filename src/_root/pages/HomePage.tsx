@@ -1,5 +1,10 @@
 const HomePage = () => {
-  return <div>I am HomePage</div>;
+  return (
+    <div>
+      {/* <LocationPicker /> */}
+      Home
+    </div>
+  );
 };
 
 export default HomePage;
