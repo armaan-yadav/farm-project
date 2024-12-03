@@ -53,6 +53,7 @@ const PhoneAuthentication = () => {
   const handleSendOtp = async (phoneNumber: string) => {
     console.log("handleSendOtp called");
     const ph = `+91${phoneNumber}`;
+    console.log(ph);
     try {
       const userId = await authServices.sendOTP({ phoneNumber: ph });
       setUserId(userId);

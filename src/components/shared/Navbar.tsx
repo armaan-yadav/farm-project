@@ -1,7 +1,8 @@
 import { navbarItems } from "@/constants/constants";
-import { AlignJustify } from "lucide-react";
+import Hamburger from "hamburger-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import SidebarDrawer from "./SidebarDrawer";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -38,8 +39,10 @@ const Navbar = () => {
         ))}
       </div>
 
+      <SidebarDrawer />
+
       <div className="place-items-end">
-        <AlignJustify />
+       
       </div>
     </nav>
   );

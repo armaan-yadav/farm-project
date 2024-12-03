@@ -58,6 +58,8 @@ class AuthServices {
         ID.unique(),
         phoneNumber
       );
+      console.log(phoneNumber);
+      console.log(token);
       return token.userId;
     } catch (error) {
       throw AuthError.fromAppwriteError(error);
