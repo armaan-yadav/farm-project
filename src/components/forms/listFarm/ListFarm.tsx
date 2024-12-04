@@ -54,6 +54,7 @@ const ListFarm = () => {
     isLastStep,
     next,
     prev,
+    goTo,
   } = useMultipleForm({
     steps: [
       <OverviewForm key="overview" {...data} updateField={updateField} />,
@@ -70,7 +71,7 @@ const ListFarm = () => {
       />,
     ],
   });
-
+  console.log(data);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     isLastStep ? handleFinalSubmit() : next();
@@ -84,8 +85,8 @@ const ListFarm = () => {
   const stepTitles = ["Overview", "Location", "Land", "Additional"];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      <Card className="flex flex-col flex-1 w-full max-w-full h-full shadow-none rounded-none">
+    <div className="h-full bg-gray-100 flex flex-col">
+      <Card className="flex flex-col flex-1 w-full max-w-full  shadow-none rounded-none">
         <CardHeader className="bg-green-50 border-b p-4 sm:p-6">
           <CardTitle className="text-xl sm:text-2xl font-bold text-green-800 text-center">
             List Your Farm

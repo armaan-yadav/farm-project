@@ -2,6 +2,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FarmData } from "@/types";
 import ListFarmWrapper from "../ListFarmWrapper";
+import { useEffect, useState } from "react";
+import { CityList } from "@/components/shared/CityList";
+import { StateList } from "@/components/shared/StateList";
 
 interface LocationRelatedFormProps {
   location: string;
@@ -24,6 +27,14 @@ const LocationRelatedForm = ({
   landmarks,
   updateField,
 }: LocationRelatedFormProps) => {
+  const [stateCode, setStateCode] = useState("");
+  const [cityCode, setCityCode] = useState("");
+
+  useEffect(() => {
+    updateField({ state: stateCode });
+    updateField({ city: cityCode });
+  }, [stateCode, cityCode]);
+
   return (
     <ListFarmWrapper title="Location Related Details">
       <Label>
@@ -41,18 +52,20 @@ const LocationRelatedForm = ({
         />
       </Label>
       <Label>
-        City
-        <Input
-          value={city}
-          onChange={(e) => updateField({ city: e.target.value })}
-        />
-      </Label>
-      <Label>
         State
-        <Input
+        {/* <Input
           value={state}
           onChange={(e) => updateField({ state: e.target.value })}
-        />
+        /> */}
+        <StateList setStateCode={setStateCode} />
+      </Label>
+      <Label>
+        City
+        {/* <Input
+          value={city}
+          onChange={(e) => updateField({ city: e.target.value })}
+        /> */}
+        <CityList setCityCode={setCityCode} stateCode={stateCode} />
       </Label>
       <Label>
         Pin Code

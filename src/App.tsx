@@ -12,6 +12,7 @@ import CreateProfile from "./_root/pages/CreateProfile";
 import AboutPage from "./_root/pages/AboutPage";
 import ContactUs from "./_root/pages/ContactUs";
 import OurServies from "./_root/pages/OurServies";
+import AddListingPage from "./_root/pages/AddListingPage";
 
 function App() {
   useEffect(() => {
@@ -36,9 +37,10 @@ function App() {
         {/* OTHER ROUTES  */}
         <Route element={<RootLayout />}>
           <Route path="/" index element={<HomePage />} />
-          <Route path="/about" index element={<AboutPage />} />
-          <Route path="/contact-us" index element={<ContactUs />} />
-          <Route path="/our-services" index element={<OurServies />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/our-services" element={<OurServies />} />
+          <Route path="/add-listing" element={<AddListingPage />} />
         </Route>
       </Routes>
       <Toaster />

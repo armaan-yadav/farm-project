@@ -1,6 +1,7 @@
-import ListFarm from "@/components/forms/listFarm/ListFarm";
+import InputImageAndPreview from "@/components/shared/InputImageAndPreview";
 import { Button } from "@/components/ui/button";
 import { authServices } from "@/services/authServices";
+import { useState } from "react";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,6 @@ const HomePage = () => {
       >
         Log out
       </Button>
-      <ListFarm />
     </div>
   );
 };

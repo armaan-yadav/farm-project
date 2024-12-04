@@ -1,6 +1,8 @@
+import InputImageAndPreview from "@/components/shared/InputImageAndPreview";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FarmData } from "@/types";
+import { useState } from "react";
 import ListFarmWrapper from "../ListFarmWrapper";
 
 interface OverviewFormProps {
@@ -24,6 +26,8 @@ const OverviewForm = ({
   price,
   updateField,
 }: OverviewFormProps) => {
+  const [images, setImages] = useState<string[]>([]);
+
   return (
     <ListFarmWrapper title="Overview">
       <Label>
@@ -35,7 +39,10 @@ const OverviewForm = ({
           onChange={(e) => updateField({ title: e.target.value })}
         />
       </Label>
-      <Label>media</Label>
+      <div>
+        <Label>Media</Label>
+        <InputImageAndPreview imageUrls={images} setImageUrls={setImages} />
+      </div>
       <Label>
         Area
         <Input

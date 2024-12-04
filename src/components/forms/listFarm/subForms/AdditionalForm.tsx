@@ -14,6 +14,7 @@ interface AdditionalFormProps {
   labourProvided?: boolean;
   laboutCost?: string;
   updateField: (fields: Partial<FarmData>) => void;
+  // resetForm: (index: number) => void;
 }
 
 const AdditionalDetailsForm = ({
@@ -24,7 +25,8 @@ const AdditionalDetailsForm = ({
   numOfSidesOpen,
   labourProvided,
   updateField,
-}: AdditionalFormProps) => {
+}: // resetForm,
+AdditionalFormProps) => {
   const [isLabourProvided, setIsLabourProvided] = useState(labourProvided);
   return (
     <ListFarmWrapper title="Additional Details">
